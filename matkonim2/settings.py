@@ -1,3 +1,5 @@
+import os
+from dotenv import load_dotenv
 """
 Django settings for matkonim2 project.
 
@@ -20,7 +22,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-#!5l52x35+5=k(s@p(zd-7_p0o&v3_=za1ngirq&k-g7#1xj0l'
+load_dotenv(os.path.join(BASE_DIR, '.env'))
+SECRET_KEY = os.getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
