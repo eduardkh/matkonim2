@@ -5,6 +5,7 @@ cryptography==3.4.8
 Django==3.2.7
 django-storages==1.11.1
 paramiko==2.7.2
+Pillow==8.3.2
 pycparser==2.20
 PyNaCl==1.4.0
 python-dotenv==0.19.0
