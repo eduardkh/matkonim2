@@ -2,6 +2,9 @@ from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
 from django.conf import settings
 from datetime import datetime
+from django.urls import reverse
+from django.utils.text import slugify
+from unidecode import unidecode
 # Create your models here.
 User = settings.AUTH_USER_MODEL
 # Technique (choices)
@@ -60,7 +63,8 @@ class Ingredient(models.Model):
 
 class Recipe(models.Model):
     title = models.CharField(max_length=120)
-    slug = models.SlugField(allow_unicode=True, db_index=True, unique=True)
+    slug = models.SlugField(allow_unicode=True, db_index=True,
+                            unique=True, default="", null=False, blank=True)
     author = models.ForeignKey(User, default=1,
                                on_delete=models.SET_DEFAULT)
     category = models.ManyToManyField(Category)
@@ -82,3 +86,10 @@ class Recipe(models.Model):
 
     def __str__(self):
         return self.title
+
+    def get_absolute_url(self):
+        return reverse("recipe_detail", kwargs={"slug": self.slug})
+
+    def save(self, *args, **kwargs):
+        self.slug = slugify(unidecode(self.title))
+        super().save(*args, **kwargs)
