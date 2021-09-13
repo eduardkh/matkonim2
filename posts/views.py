@@ -14,6 +14,9 @@ def index(request):
 def detail(request, slug):
     recipe = get_object_or_404(Recipe, slug=slug)
     context = {
-        'recipe': recipe
+        'recipe': recipe,
+        'ingredients': recipe.ingredients.all(),
+        'techniques': recipe.techniques.all(),
+        'categories': recipe.categories.all(),
     }
     return render(request, 'posts/detail.html', context)

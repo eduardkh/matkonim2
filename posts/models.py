@@ -67,7 +67,7 @@ class Recipe(models.Model):
                             unique=True, default="", null=False, blank=True)
     author = models.ForeignKey(User, default=1,
                                on_delete=models.SET_DEFAULT)
-    category = models.ManyToManyField(Category)
+    categories = models.ManyToManyField(Category)
     techniques = models.ManyToManyField(Technique)
     difficulty = models.ForeignKey(
         Difficulty, default=1, on_delete=models.SET_DEFAULT, blank=True)

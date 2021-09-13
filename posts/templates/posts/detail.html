@@ -11,21 +11,33 @@
 <body>
     <h1>detail</h1>
     <ul>
-          <li> title {{ recipe.title }} </li>
-          <li> slug {{ recipe.slug }} </li>
-          <li>  {{ recipe.author }} </li>
-          <li>  {{ recipe.category }} </li>
-          <li>  {{ recipe.techniques }} </li>
-          <li>  {{ recipe.difficulty }} </li>
-          <li>  {{ recipe.image }} </li>
-          <li>  {{ recipe.image.url }} </li>
-          <li>  {{ recipe.prep_time }} </li>
-          <li>  {{ recipe.cook_time }} </li>
-          <li>  {{ recipe.Instructions }} </li>
-          <li>  {{ recipe.publish_date }} </li>
-          <li>  {{ recipe.timestamp }} </li>
-          <li>  {{ recipe.updated }} </li>
-          <li>  {{ recipe.ingredients }} </li>
+        <li> title {{ recipe.title }} </li>
+        <li> slug {{ recipe.slug }} </li>
+        <li> {{ recipe.author }} </li>
+        <li> {{ recipe.difficulty }} </li>
+        <li> {{ recipe.image }} </li>
+        <li> {{ recipe.image.url }} </li>
+        <li> {{ recipe.prep_time }} </li>
+        <li> {{ recipe.cook_time }} </li>
+        <li> {{ recipe.Instructions }} </li>
+        <li> {{ recipe.publish_date }} </li>
+        <li> {{ recipe.timestamp }} </li>
+        <li> {{ recipe.updated }} </li>
+        <br>
+        <br>
+        {% for ingredient in ingredients %}
+        {{ingredient}}
+        {% endfor %}
+        <br>
+        <br>
+        {% for technique in techniques %}
+        {{technique}}
+        {% endfor %}
+        <br>
+        <br>
+        {% for category in categories %}
+        {{category}}
+        {% endfor %}
     </ul>
 
 </body>
