@@ -33,7 +33,7 @@ class Difficulty(models.Model):
 
 
 class PrepTime(models.Model):
-    prep_time = models.IntegerField(null=True, blank=True, default=1, validators=[
+    prep_time = models.IntegerField(blank=True, default=1, validators=[
         MinValueValidator(1), MaxValueValidator(10080)])
 
     def __str__(self):
@@ -42,7 +42,7 @@ class PrepTime(models.Model):
 
 
 class CookTime(models.Model):
-    cook_time = models.IntegerField(null=True, blank=True, default=1, validators=[
+    cook_time = models.IntegerField(blank=True, default=1, validators=[
         MinValueValidator(1), MaxValueValidator(10080)])
 
     def __str__(self):
@@ -61,12 +61,12 @@ class Ingredient(models.Model):
 class Recipe(models.Model):
     title = models.CharField(max_length=120)
     slug = models.SlugField(allow_unicode=True, db_index=True, unique=True)
-    author = models.ForeignKey(User, default=1, null=True,
+    author = models.ForeignKey(User, default=1,
                                on_delete=models.SET_DEFAULT)
     category = models.ManyToManyField(Category)
     techniques = models.ManyToManyField(Technique)
     difficulty = models.ForeignKey(
-        Difficulty, default=1, on_delete=models.SET_DEFAULT, null=True, blank=True)
+        Difficulty, default=1, on_delete=models.SET_DEFAULT, blank=True)
     image = models.ImageField(null=True, blank=True,
                               upload_to='recipe_user_uploads/')
     prep_time = models.ForeignKey(
