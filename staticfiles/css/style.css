@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700;900&display=swap');
 /* Getting the new tags to behave */
 article,
 aside,
@@ -33,13 +34,9 @@ time {
 }
 
 /* Global properties ======================================================== */
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&family=Secular+One&display=swap');
 
 body {
-	/* font-family: 'PT Serif Caption', serif; */
-	/* font-family: 'Open Sans', sans-serif; */
-	font-family: 'Roboto', sans-serif;
-	font-family: 'Secular One', sans-serif;
+	font-family: 'Rubik', sans-serif;
 	font-size: 14px;
 	line-height: 24px;
 	color: #343434;
@@ -93,7 +90,8 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: 'PT Serif Caption', serif;
+	/* font-family: 'PT Serif Caption', serif; */
+	font-family: 'Rubik', sans-serif;
 	font-weight: normal;
 	color: #343434
 }
@@ -687,7 +685,8 @@ ul.sf-menu li li li.sfHover ul {
 
 #contact-form input,
 #contact-form textarea {
-	font-family: 'PT Serif Caption', serif;
+	/* font-family: 'PT Serif Caption', serif; */
+	font-family: 'Rubik', sans-serif;
 	padding: 4px 12px 5px;
 	text-transform: uppercase;
 	margin: 0;
