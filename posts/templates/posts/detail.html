@@ -26,7 +26,10 @@
         <br>
         <br>
         {% for ingredient in ingredients %}
-        {{ingredient}}
+        {% if ingredient.name %} {{ingredient.name}} {% endif %}
+        {% if ingredient.quantity %} {{ingredient.quantity}} {% endif %}
+        {% if ingredient.extention %} {{ingredient.extention}} {% endif %}
+        <br>
         {% endfor %}
         <br>
         <br>
