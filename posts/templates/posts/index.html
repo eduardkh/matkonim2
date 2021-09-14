@@ -14,7 +14,7 @@
     <ul>
         {% for recipe in recipes %}
         <li>
-            {{recipe}}
+            <a href="{{recipe.get_absolute_url}}">{{recipe}}</a>
         </li>
         {% endfor %}
     </ul>

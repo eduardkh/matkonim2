@@ -88,7 +88,7 @@ class Recipe(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return reverse("recipe_detail", kwargs={"slug": self.slug})
+        return reverse('posts:recipe_detail', kwargs={'slug': self.slug})
 
     def save(self, *args, **kwargs):
         self.slug = slugify(unidecode(self.title))
