@@ -55,7 +55,8 @@ class CookTime(models.Model):
 
 class Ingredient(models.Model):
     name = models.CharField(max_length=120)
-    quantity = models.IntegerField(null=True, blank=True)
+    quantity = models.FloatField(null=True, blank=True)
+    extention = models.CharField(null=True, blank=True, max_length=120)
 
     def __str__(self):
         return f'{self.name} {str(self.quantity)}'
