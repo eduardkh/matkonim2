@@ -19,36 +19,18 @@
     <article class="grid_8">
       <h3>מתכונים</h3>
       <ul class="list-recipes extra">
-        <li>
-          <figure class="box-img"><img src="{% static 'images/page5-img2.jpg' %}" alt="" /></figure>
-          <div class="overflow">
-            <h4>Danis bowing</h4>
-            <p>sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
-              vero eos et accusam. et justo duo dolores et ea rebum.</p>
-            <a href="#" class="btn">Read more</a>
-          </div>
-          <div class="clear"></div>
-        </li>
-        <li>
-          <figure class="box-img"><img src="{% static 'images/page5-img3.jpg' %}" alt="" /></figure>
-          <div class="overflow">
-            <h4>Sam Dowson</h4>
-            <p>sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
-              vero eos et accusam. et justo duo dolores et ea rebum.</p>
-            <a href="#" class="btn">Read more</a>
-          </div>
-          <div class="clear"></div>
-        </li>
+        {% for recipe in recipes %}
         <li>
           <figure class="box-img"><img src="{% static 'images/page5-img4.jpg' %}" alt="" /></figure>
           <div class="overflow">
-            <h4>Jane smart</h4>
+            <h4><a href="{{recipe.get_absolute_url}}">{{recipe}}</a></h4>
             <p>sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
               vero eos et accusam. et justo duo dolores et ea rebum.</p>
-            <a href="#" class="btn">Read more</a>
+            <a href="{{recipe.get_absolute_url}}" class="btn">למתכון</a>
           </div>
           <div class="clear"></div>
         </li>
+        {% endfor %}
       </ul>
     </article>
     <div class="clear"></div>

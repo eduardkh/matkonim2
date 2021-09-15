@@ -132,6 +132,20 @@ h4 {
 	color: #d53827;
 }
 
+h4 a {
+	font-size: 25px;
+	line-height: 28px;
+	display: block;
+	color: #d53827;
+}
+
+h4 a:hover {
+	font-size: 25px;
+	line-height: 28px;
+	display: block;
+	color: #2e2e2e;
+}
+
 h5 {
 	color: #fff;
 	font-size: 15px;
