@@ -79,6 +79,7 @@ class Recipe(models.Model):
     cook_time = models.ForeignKey(
         CookTime, default=1, on_delete=models.SET_DEFAULT, blank=True)
     Instructions = models.TextField(null=True, blank=True)
+    preface = models.TextField(null=True, blank=True)
     publish_date = models.DateTimeField(
         auto_now=False, auto_now_add=True, null=True)
     timestamp = models.DateTimeField(auto_now_add=False, default=datetime.now)
