@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700;900&display=swap');
+
 /* Getting the new tags to behave */
 article,
 aside,
@@ -48,6 +49,7 @@ body {
 html,
 body {
 	height: 100%;
+	direction: rtl;
 }
 
 .ic {
