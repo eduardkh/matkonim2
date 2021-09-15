@@ -419,6 +419,13 @@ ul.sf-menu li li li.sfHover ul {
 	display: inline-block
 }
 
+.recipe-image img {
+	border-radius: 7px;
+	-moz-border-radius: 7px;
+	-webkit-border-radius: 7px;
+	width: 250px;
+}
+
 .box-img img {
 	border-radius: 7px;
 	-moz-border-radius: 7px;
