@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matkonim Posts</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    
+</head>
+
+<body>
+    <h1>detail</h1>
+    <ul>
+        <li> title {{ recipe.title }} </li>
+        <li> slug {{ recipe.slug }} </li>
+        <li> {{ recipe.author }} </li>
+        <li> {{ recipe.difficulty }} </li>
+        <li> {{ recipe.image }} </li>
+        <li> {{ recipe.image.url }} </li>
+        <li> {{ recipe.prep_time }} </li>
+        <li> {{ recipe.cook_time }} </li>
+        <li> {{ recipe.Instructions }} </li>
+        <li> {{ recipe.publish_date }} </li>
+        <li> {{ recipe.timestamp }} </li>
+        <li> {{ recipe.updated }} </li>
+        <br>
+        <br>
+        {% for ingredient in ingredients %}
+        {% if ingredient.name %} {{ingredient.name}} {% endif %}
+        {% if ingredient.quantity %} {{ingredient.quantity}} {% endif %}
+        {% if ingredient.extention %} {{ingredient.extention}} {% endif %}
+        <br>
+        {% endfor %}
+        <br>
+        <br>
+        {% for technique in techniques %}
+        {{technique}}
+        {% endfor %}
+        <br>
+        <br>
+        {% for category in categories %}
+        {{category}}
+        {% endfor %}
+    </ul>
+
+</body>
+
+</html>

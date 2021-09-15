@@ -1,51 +1,118 @@
+{% extends "posts/base.html" %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Matkonim Posts</title>
-    <link rel="stylesheet" href="{% static 'style.css' %}">
-    
-</head>
-
-<body>
-    <h1>detail</h1>
-    <ul>
-        <li> title {{ recipe.title }} </li>
-        <li> slug {{ recipe.slug }} </li>
-        <li> {{ recipe.author }} </li>
-        <li> {{ recipe.difficulty }} </li>
-        <li> {{ recipe.image }} </li>
-        <li> {{ recipe.image.url }} </li>
-        <li> {{ recipe.prep_time }} </li>
-        <li> {{ recipe.cook_time }} </li>
-        <li> {{ recipe.Instructions }} </li>
-        <li> {{ recipe.publish_date }} </li>
-        <li> {{ recipe.timestamp }} </li>
-        <li> {{ recipe.updated }} </li>
-        <br>
-        <br>
-        {% for ingredient in ingredients %}
-        {% if ingredient.name %} {{ingredient.name}} {% endif %}
-        {% if ingredient.quantity %} {{ingredient.quantity}} {% endif %}
-        {% if ingredient.extention %} {{ingredient.extention}} {% endif %}
-        <br>
-        {% endfor %}
-        <br>
-        <br>
-        {% for technique in techniques %}
-        {{technique}}
-        {% endfor %}
-        <br>
-        <br>
-        {% for category in categories %}
-        {{category}}
-        {% endfor %}
-    </ul>
-
-</body>
-
-</html>
+{% block content %}
+<section id="content">
+     <div class="ic">More Website Templates @ TemplateMonster.com. December03, 2012!</div>
+     <div class="border-horiz"></div>
+     <div class="container_12 row-1">
+          <article class="grid_4 thumbnail-1">
+               <h3><span>Vegan</span> cookings </h3>
+               <figure class="box-img"><img src="{% static 'images/page1-img1.jpg' %}" alt="" /></figure>
+               <p><a href="http://blog.templatemonster.com/free-website-templates/" class="link-1">Click here</a> for
+                    more info
+                    about this free template created by TemplateMonster.com team.</p>
+               <a href="http://blog.templatemonster.com/free-website-templates/" class="btn">Read more</a>
+          </article>
+          <article class="grid_4 thumbnail-1">
+               <h3><span>grill</span> cookings </h3>
+               <figure class="box-img"><img src="{% static 'images/page1-img2.jpg' %} " alt="" /></figure>
+               <p>This web template is optimized for 1280X1024 screen resolution. It is also XHTML &amp; CSS valid.</p>
+               <a href="http://blog.templatemonster.com/free-website-templates/" class="btn">Read more</a>
+          </article>
+          <article class="grid_4 thumbnail-1">
+               <h3><span>dessert</span> cookings </h3>
+               <figure class="box-img"><img src="{% static 'images/page1-img3.jpg' %} " alt="" /></figure>
+               <p>The PSD source files of this template are available for free for the registered members.</p>
+               <a href="http://blog.templatemonster.com/free-website-templates/" class="btn">Read more</a>
+          </article>
+          <div class="clear"></div>
+     </div>
+     <div class="border-horiz"></div>
+     <div class="container_12">
+          <article class="grid_4">
+               <h3>popular</h3>
+               <ul class="list-popular">
+                    <li> <a href="#">Lighter cooking</a>
+                         <p>At vero eos et accusam etusto dolores et ea rebum.</p>
+                    </li>
+                    <li> <a href="#">Pudding</a>
+                         <p>Duis autem vel eum iriure dolor in hendrerit.</p>
+                    </li>
+                    <li> <a href="#">Black bean salsa</a>
+                         <p>Molestie consequat, vel illum dolore eu feugiat.</p>
+                    </li>
+                    <li> <a href="#">Asparagus</a>
+                         <p>Vulputate velit esse molestie consequat.</p>
+                    </li>
+               </ul>
+          </article>
+          <article class="grid_8">
+               <h3>Professional programs</h3>
+               <blockquote class="quote-1"> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+                    eirmod
+                    tempor invidunt ut labore et dolore magna aliquym erat, sed diam voluptua At vero eos. </blockquote>
+               <div class="name-author">- James Willis</div>
+               <ul class="list-dropcap">
+                    <li>
+                         <div class="wrapper">
+                              <div class="dropcap">A</div>
+                              <a href="#">Lorpsum dolor</a>
+                         </div>
+                         <figure class="box-img"><img src="{% static 'images/page1-img4.jpg' %} " alt="" /></figure>
+                    </li>
+                    <li>
+                         <div class="wrapper">
+                              <div class="dropcap">B</div>
+                              <a href="#">consetet
+                                   sadiping </a>
+                         </div>
+                         <figure class="box-img"><img src="{% static 'images/page1-img5.jpg' %} " alt="" /></figure>
+                    </li>
+                    <li>
+                         <div class="wrapper">
+                              <div class="dropcap">C</div>
+                              <a href="#">diam nonumy </a>
+                         </div>
+                         <figure class="box-img"><img src="{% static 'images/page1-img6.jpg' %} " alt="" /></figure>
+                    </li>
+               </ul>
+          </article>
+          <div class="clear"></div>
+     </div>
+</section>
+<section id="content">
+     <h1>detail</h1>
+     <ul>
+          <li> title {{ recipe.title }} </li>
+          <li> slug {{ recipe.slug }} </li>
+          <li> {{ recipe.author }} </li>
+          <li> {{ recipe.difficulty }} </li>
+          <li> {{ recipe.image }} </li>
+          <li> {{ recipe.image.url }} </li>
+          <li> {{ recipe.prep_time }} </li>
+          <li> {{ recipe.cook_time }} </li>
+          <li> {{ recipe.Instructions }} </li>
+          <li> {{ recipe.publish_date }} </li>
+          <li> {{ recipe.timestamp }} </li>
+          <li> {{ recipe.updated }} </li>
+          <br>
+          <br>
+          {% for ingredient in ingredients %}
+          {% if ingredient.name %} {{ingredient.name}} {% endif %}
+          {% if ingredient.quantity %} {{ingredient.quantity}} {% endif %}
+          {% if ingredient.extention %} {{ingredient.extention}} {% endif %}
+          <br>
+          {% endfor %}
+          <br>
+          <br>
+          {% for technique in techniques %}
+          {{technique}}
+          {% endfor %}
+          <br>
+          <br>
+          {% for category in categories %}
+          {{category}}
+          {% endfor %}
+     </ul>
+</section>
+{% endblock %}
