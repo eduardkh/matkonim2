@@ -289,14 +289,14 @@ nav {
 
 .sf-menu a {
 	color: #343434;
-	font-size: 14px;
-	line-height: 20px;
+	font-size: 22px;
+	line-height: 22px;
 	text-decoration: none;
 }
 
 .sf-menu>li>a {
 	display: block;
-	padding: 12px 14px;
+	padding: 10px 12px;
 }
 
 .sf-menu ul {

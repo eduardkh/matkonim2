@@ -6,18 +6,10 @@
             <h1><a href="index.html"><img alt="" src="{% static 'images/logo.png' %}"></a></h1>
             <nav>
                 <ul class="sf-menu">
-                    <li class="active"><a href="index.html">Home</a></li>
-                    <li><a href="index-1.html">Courses </a> </li>
-                    <li><a href="index-2.html">Recipes</a>
-                        <ul>
-                            <li><a href="#">dolores et</a></li>
-                            <li><a href="#">lorem ipsum dolo </a>
-                            <li><a href="#">sanctus est</a></li>
-                        </ul>
+                    <li {% if request.path == '/' %} class="active" {% endif %}><a
+                            href="{% url 'posts:index' %}">מתכונים</a>
+
                     </li>
-                    <li><a href="index-3.html">Calendar</a> </li>
-                    <li><a href="index-4.html">Chefs</a> </li>
-                    <li><a href="index-5.html">Contacts</a> </li>
                 </ul>
             </nav>
             <div class="clear"></div>
