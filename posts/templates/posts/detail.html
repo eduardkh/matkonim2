@@ -34,7 +34,7 @@
                          <p>
                               {% for ingredient in ingredients %}
                               {% if ingredient.name %} {{ingredient.name}} {% endif %}
-                              {% if ingredient.quantity %} {{ingredient.quantity}} {% endif %}
+                              {% if ingredient.quantity %} {{ingredient.quantity|floatformat}} {% endif %}
                               {% if ingredient.extention %} {{ingredient.extention}} {% endif %}
                               <br>
                               {% endfor %}
@@ -44,14 +44,14 @@
           </article>
           <article class="grid_8">
                <h3>{{ recipe.title }}</h3>
-               <blockquote class="quote-1">{{recipe.preface}}</blockquote>
+               <blockquote class="quote-1">{{recipe.preface|linebreaks}}</blockquote>
                <div class="name-author">
                     {% if recipe.author.get_full_name %} {{recipe.author.get_full_name}}
                     {% else %}
                     {{recipe.author}}
                     {% endif %}
                </div>
-               <p>{{ recipe.Instructions }}</p>
+               <p>{{ recipe.Instructions|linebreaks }}</p>
           </article>
           <div class="clear"></div>
      </div>
