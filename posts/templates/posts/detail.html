@@ -9,17 +9,24 @@
                <h3>סרגל צד</h3>
                <ul class="list-popular">
                     <li> <a href="#">קטגוריות</a>
-                         {% for category in categories %}
-                         <p>{{category}}</p>
-                         {% endfor %}
+                         <p>
+                              {% for category in categories %}
+                              {{category}}
+                              <br>
+                              {% endfor %}
+                         </p>
                     </li>
                     <li> <a href="#">טכניקות בישול</a>
-                         {% for technique in techniques %}
-                         <p>{{technique}}</p>
-                         {% endfor %}
+                         <p>
+                              {% for technique in techniques %}
+                              {{technique}}
+                              <br>
+                              {% endfor %}
+                         </p>
                     </li>
                     <a href="#">זמנים</a>
-                    <p>הכנה {{ recipe.prep_time }} <br>
+                    <p>
+                         הכנה {{ recipe.prep_time }} <br>
                          בישול {{ recipe.cook_time }}
                     </p>
                     </li>
@@ -29,15 +36,21 @@
                               {% if ingredient.name %} {{ingredient.name}} {% endif %}
                               {% if ingredient.quantity %} {{ingredient.quantity}} {% endif %}
                               {% if ingredient.extention %} {{ingredient.extention}} {% endif %}
+                              <br>
+                              {% endfor %}
                          </p>
-                         {% endfor %}
                     </li>
                </ul>
           </article>
           <article class="grid_8">
                <h3>{{ recipe.title }}</h3>
                <blockquote class="quote-1">{{recipe.preface}}</blockquote>
-               <div class="name-author">{{recipe.author}}</div>
+               <div class="name-author">
+                    {% if recipe.author.get_full_name %} {{recipe.author.get_full_name}}
+                    {% else %}
+                    {{recipe.author}}
+                    {% endif %}
+               </div>
                <p>{{ recipe.Instructions }}</p>
           </article>
           <div class="clear"></div>
