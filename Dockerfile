@@ -38,6 +38,8 @@ RUN groupadd -r app && useradd --no-log-init -r -g app app
 ENV HOME=/home/app
 ENV APP_HOME=/home/app/web
 RUN mkdir $APP_HOME
+RUN mkdir $APP_HOME/staticfiles
+RUN mkdir $APP_HOME/uploads
 WORKDIR $APP_HOME
 
 # install dependencies
