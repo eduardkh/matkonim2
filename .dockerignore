@@ -4,3 +4,4 @@ utils/
 Dockerfile
 LICENSE
 README.md
+docker-compose.yml
