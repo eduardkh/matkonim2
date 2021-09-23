@@ -127,9 +127,12 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 MEDIA_URL = '/uploads/'
-STATIC_ROOT = BASE_DIR / 'staticfiles'
 MEDIA_ROOT = BASE_DIR / 'uploads'
-# STATICFILES_DIRS = [os.path.join(BASE_DIR, "staticfiles"), ]
+
+if DEBUG:
+    STATICFILES_DIRS = [os.path.join(BASE_DIR, "staticfiles"), ]
+else:
+    STATIC_ROOT = BASE_DIR / 'staticfiles'
 # python manage.py findstatic --verbosity 2 style.css (tshoot)
 
 
