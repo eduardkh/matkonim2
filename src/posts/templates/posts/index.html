@@ -21,7 +21,11 @@
       <ul class="list-recipes extra">
         {% for recipe in recipes %}
         <li>
-          <figure class="recipe-image"><img src="{{recipe.image.url}}" alt="" /></figure>
+          <figure class="recipe-image">
+            {% if recipe.image %}
+            <img src="{{recipe.image.url}}" alt="" />
+            {% endif %}
+          </figure>
           <div class="overflow">
             <h4><a href="{{recipe.get_absolute_url}}">{{recipe}}</a></h4>
             <p>{{recipe.preface}}</p>

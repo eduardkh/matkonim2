@@ -129,7 +129,7 @@ STATIC_URL = '/static/'
 MEDIA_URL = '/uploads/'
 MEDIA_ROOT = BASE_DIR / 'uploads'
 
-if DEBUG:
+if os.environ.get("DJANGO_ENVIRONMENT", "production") == 'development':
     STATICFILES_DIRS = [os.path.join(BASE_DIR, "staticfiles"), ]
 else:
     STATIC_ROOT = BASE_DIR / 'staticfiles'
