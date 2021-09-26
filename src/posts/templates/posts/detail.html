@@ -60,7 +60,9 @@
      <ul>
 
           <li> {{ recipe.difficulty }} </li>
+          {% if recipe.image %}
           <li> {{ recipe.image.url }} </li>
+          {% endif %}
           <li> {{ recipe.publish_date }} </li>
           <li> {{ recipe.timestamp }} </li>
           <li> {{ recipe.updated }} </li>
